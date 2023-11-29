@@ -1,0 +1,49 @@
+
+{% if binder %}
+
+    <ul>
+    {% for entry in binder %}
+    
+        <li>name: {{entry.name}}</li>
+        <li>oracle_id: {{entry.oracle_id}}</li>
+        <li>oracle_text: {{entry.oracle_text}}</li>
+        <li>type_line: {{entry.type_line}}</li>
+        <li>release_date: {{entry.release_date}}</li>
+        <li>colours: {{entry.colours}}</li>
+        <li><img src={{entry.default_image_uris.small}}></li>
+        <li>copies: {{entry.copies}}</li>
+        <li>binder: {{entry.binder}}</li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No binders are available.</p>
+{% endif %}
+
+
+<!---
+{% if binder_entry.copies|length < 4 %}
+{% with test=2 %}
+{% for test in range(4)%}
+<td>
+    <p>unobtained</p>
+    <img src={binder_entry.default_image_uris.normal}}>
+</td>
+{% endfor %}
+{%endif%}
+--->
+
+
+
+<p>binder:{{page.0.binder}}</p>
+<p>volume:{{page.0.volume}}</p>
+<p>page:{{page.0.page}}</p>
+{% for row in page %}
+<p>row: {{row.row}}</p>
+{% include "row.html" %}  
+{% endfor %}
+
+
+{% for row in page_obj.object_list %}
+<p>row: {{row.row}}</p>
+{% include "row.html" %}  
+{% endfor %}

@@ -1,0 +1,6 @@
+/config/config-lightsail.json
+.env
+/LandCollectionProject/venv/*
+.vscode/*
+./venv/*
+/.github/workflows/CICD.yaml

@@ -14,6 +14,7 @@ exports = async function() {
     case 200:
       // The response body is a BSON.Binary object. Parse it and return.
       const data =  EJSON.parse(response.body.text()).data 
+      data.forEach( obj => renameKey( obj, 'id', '_id' ) );
       console.log(`${data.length} new cards`);
       const db = context.services.get("CardCluster").db("CardDB");
       const collection = db.collection("Lands");
@@ -42,9 +43,12 @@ exports = async function() {
   console.log(`${docsInserted} documents were inserted`);
   return docsInserted;
  
-  // should I switch id to primary key(_id)?
-  // process is messy
   
 };
 
+function renameKey ( obj, oldKey, newKey ) {
+  obj[newKey] = obj[oldKey];
+  delete obj[oldKey];
+}
 
+//make function to convert string time into date object

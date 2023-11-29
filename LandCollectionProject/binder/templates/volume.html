@@ -1,0 +1,11 @@
+<h1>binder</h1>
+{% if binder %}
+
+
+    {% for row in binder %}
+        {% include "presentRow.html" %}  
+    {% endfor %}
+
+{% else %}
+    <p>No binders are available.</p>
+{% endif %}

@@ -1,0 +1,11 @@
+version: '2.2'
+services:
+    django:
+        container_name: land-collection
+        image: landcollection:latest
+        env_file: .env
+        build:
+            context: LandCollectionProject
+            target: builder
+        ports: 
+          - '8000:8000'

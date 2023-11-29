@@ -1,0 +1,14 @@
+<h2>{{row.name}}</h2>
+<table>
+<tr>
+{% for copy in row.copies %}
+<td>
+    <p>status: {{copy.status}}</p>
+    <p>condition: {{copy.quality}}</p>
+    <img src={{copy.image_uris.normal}}>
+</td>
+{% endfor %}
+
+
+</tr>
+</table>
