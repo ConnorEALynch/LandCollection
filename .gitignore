@@ -1,6 +1,8 @@
 /config/config-lightsail.json
 .env
 /LandCollectionProject/venv/*
+/LandCollectionProject/binder/__pycache__/*
+/LandCollectionProject/card/__pycache__/*
 .vscode/*
 ./venv/*
 /.github/workflows/CICD.yaml

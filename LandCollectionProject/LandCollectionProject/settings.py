@@ -87,12 +87,11 @@ mongoengine.connect(db=env('DATABASE_NAME'),host=env('CONNECTION_STRING'))
 
 #keep posted here for updates
 #https://github.com/MongoEngine/django-mongoengine
-#DATABASES = {
-#    'default': {
-#        'ENGINE': 'django',
-#        'NAME': 'CardDB',
-#   }
-#}
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.dummy'
+    }
+}
 
 
 
