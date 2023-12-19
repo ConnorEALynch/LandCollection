@@ -1,6 +1,53 @@
-<h1>binderCollection</h1>
-{% for row in binders%}
+{% extends 'base.html' %}
 
-{% include "presentRow.html" %}    
+{% block content %}
+<script type="text/javascript">
 
+function paginate (context, modifier){
+    volume = $(context).siblings('.volume').first().text();
+    binder = $(context).siblings('.binder').first().text();
+    page = $(context).siblings('.page').first().text();
+    intPage = parseInt(page) + modifier
+    $.ajax(
+    {
+        type:"GET",
+        url: "/binder/"+binder+"/volume/"+volume+"/page/"+intPage,
+        data:{"embedded": "True"},
+        success: function( data ) 
+        {
+            present =  $(context).parent()
+            present.empty();
+            present.html(data);
+        }
+     });
+};
+
+$(document).ready(function() {
+    $('.present').on('click', '.previous', function(){
+        paginate(this, -1);
+    });
+    $('.present').on('click', '.next', function(){
+        paginate(this, 1);
+    });
+});
+
+
+
+</script>
+
+    
+{% for context in binders %}
+<div class="present">
+{% include "pageEmbed.html" %}
+{% if context.has_previous%}
+<button class="previous">previous</button>
+{% endif %}
+{% if context.has_next %}
+<button class="next">next</button>
+{% endif %}
+</div>
 {% endfor %}
+
+{% endblock content%}
+
+

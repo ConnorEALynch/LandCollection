@@ -1,0 +1,21 @@
+{% load static %}
+<script src="{% static 'JS/jquery-3.7.1.min.js' %}"></script>
+<script src="{% static 'JS/jquery.waypoints.min.js' %}"></script>
+<script src="{% static 'JS/infinite.min.js' %}"></script>
+
+
+<body>
+    <header class="page-header">
+      <div class="container">
+          <h1><a href="/">Land Collection</a></h1>
+      </div>
+    </header>
+    <main class="container">
+        <div class="row">
+            <div class="col">
+            {% block content %}
+            {% endblock %}
+            </div>
+        </div>
+    </main>
+</body>

@@ -47,3 +47,21 @@
 <p>row: {{row.row}}</p>
 {% include "row.html" %}  
 {% endfor %}
+
+
+<div class="pagination">
+    <span class="step-links">
+        {% if row_obj.has_previous %}
+            <a href="{% url 'byRow' binder_name=row_obj volume=row_obj.0.volume page_number=row_obj.0.page row_number=row_obj.previous_page_number%}">previous</a>
+        {% endif %}
+
+        <span class="current">
+            Page {{ row_obj.number }} of {{ row_obj.paginator.num_pages }}.
+        </span>
+
+        {% if row_obj.has_next %}
+        <a href="{% url 'byRow' binder_name=row_obj.0.binder volume=row_obj.0.volume page_number=row_obj.0.page row_number=row_obj.previous_page_number%}">next</a>
+          
+        {% endif %}
+    </span>
+</div>

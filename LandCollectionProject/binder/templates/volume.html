@@ -1,11 +1,32 @@
-<h1>binder</h1>
-{% if binder %}
 
 
-    {% for row in binder %}
-        {% include "presentRow.html" %}  
-    {% endfor %}
+{% extends 'base.html' %}
 
-{% else %}
-    <p>No binders are available.</p>
+{% block content %}
+<script type="text/javascript">
+
+function paginate (binder, volume, page){
+
+    $.ajax(
+    {
+        type:"GET",
+        url: "/binder/"+binder+"/volume/"+volume+"/page/"+page,
+        data:{"embedded": "True"},
+        success: function( data ) 
+        {
+            $(this).parent.empty();
+            $(this).parent.html(data);
+        }
+     });
+};
+
+</script>
+
+{% include "pageEmbed.html" %}
+{% if context.has_previous%}
+<button class="previous">previous</button>
 {% endif %}
+{% if context.has_next %}
+<button class="next">next</button>
+{% endif %}
+{% endblock content%}

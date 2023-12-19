@@ -5,6 +5,8 @@ urlpatterns = [
     path("", views.index, name="index"),
     # ex: /card/id/123-12345345-3244354
     path("id/<str:card_id>", views.byId, name="byId"),
+    # ex: /card/id/123-12345345-3244354
+    path("oracle_id/<str:oracle_id>", views.byOracleId, name="byOracleId"),
     # ex: /card/zen
     path("<str:set>", views.bySet, name="bySet"),
     # ex: /card/zen/223

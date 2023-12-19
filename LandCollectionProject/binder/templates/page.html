@@ -1,22 +1,25 @@
-{% for row in page_obj.object_list %}
-<p>row: {{row.row}}</p>
-{% include "presentRow.html" %}  
-{% endfor %}
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% include 'pageEmbed.html' %}
 
 
 <div class="pagination">
     <span class="step-links">
-        {% if page_obj.has_previous %}
-            <a href="{% url 'byPage' binder_name=page_obj.0.binder volume=page_obj.0.volume page_number=page_obj.previous_page_number %}">previous</a>
+        {% if context.has_previous %}
+            <a href="{% url 'byPage' binder_name=context.paginator.binder volume_number=context.paginator.volume page_number=context.previous_page_number%}">previous</a>
         {% endif %}
 
         <span class="current">
-            Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
+            Page {{ context.number }} of {{ context.paginator.num_pages }}
         </span>
 
-        {% if page_obj.has_next %}
-        <a href="{% url 'byPage' binder_name=page_obj.0.binder volume=page_obj.0.volume page_number=page_obj.next_page_number %}">next</a>
+        {% if context.has_next %}
+        <a href="{% url 'byPage' binder_name=context.paginator.binder volume_number=context.paginator.volume page_number=context.next_page_number%}">next</a>
           
         {% endif %}
     </span>
 </div>
+
+{% endblock content%}

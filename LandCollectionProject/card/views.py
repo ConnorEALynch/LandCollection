@@ -4,19 +4,38 @@ from django.urls import reverse
 from .models import card
 from django.utils.text import slugify
 
+
+
+
+
+
+
 def index(request):
-    land_list = card.objects.objects()
+    land_list = card.objects()
     if not land_list:
         return HttpResponseNotFound("no cards found")
     else:
         return render(request, "card.html", {"card_list":land_list})
     
+
+    
 def byId(request, card_id):
     try:
         land = card.objects.get(_id=card_id)
-        return render(request, "card.html", {"card":land})
+        name_slug = slugify(land.name)
+        url = reverse("bySlug", kwargs={ "set":land.set,"collector_number":land.collector_number, "card_slug":name_slug })
+        return HttpResponseRedirect(url)
     except:
         return HttpResponseNotFound("no cards with id: " + card_id)
+    
+def byOracleId(request, oracle_id, lang="en"):
+    try:
+        land = card.objects(oracle_id=oracle_id, lang=lang).order_by('released_at').first()
+        name_slug = slugify(land.name)
+        url = reverse("bySlug", kwargs={ "set":land.set,"collector_number":land.collector_number, "card_slug":name_slug })
+        return HttpResponseRedirect(url)
+    except:
+        return HttpResponseNotFound("no cards with oracle id: " + oracle_id)
     
 
 def bySet(request, set):

@@ -16,9 +16,12 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import include,path
+from search import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path("card/", include("card.urls")),
     path("binder/", include("binder.urls")),
+    path("search", include("search.urls")),
+    path("", views.homepage, name="homepage")
 ]

@@ -25,7 +25,14 @@ class binderEntry(Document):
     page = IntField()
     volume = IntField()
     order = IntField()
-    meta = {'collection': 'Binders'} 
+    meta = {
+            'collection': 'Binders',
+            'indexes': [
+        {'fields': ['$name'],
+         'default_language': 'english',
+         'weights': {'name': 10}
+        }
+    ]}
 
 class binderInfo(DynamicDocument):
     _id = ObjectIdField()
