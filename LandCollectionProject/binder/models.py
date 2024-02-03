@@ -1,14 +1,22 @@
 from mongoengine import *
 
 class land(EmbeddedDocument):
-    #do I need Id here?
-    #id = StringField()
     card_id = StringField()
     foil = StringField()
     quality = StringField()
     donor = StringField()
     status = StringField()
+    border_color = StringField()
+    set = StringField()
     image_uris = DictField()
+    card_faces = GenericEmbeddedDocumentField()
+
+class default(EmbeddedDocument):
+    card_id = StringField()
+    border_color = StringField()
+    set = StringField()
+    image_uris = DictField()
+    card_faces = GenericEmbeddedDocumentField()
 
 class binderEntry(Document):
     _id = ObjectIdField()
@@ -16,8 +24,7 @@ class binderEntry(Document):
     oracle_id = StringField()
     oracle_text = StringField()
     type_line = StringField()
-    release_date = StringField()
-    default_image_uris = DictField()
+    released_at = StringField()
     copies = EmbeddedDocumentListField(land)
     colours = ListField(StringField())
     binder = StringField()
@@ -25,6 +32,10 @@ class binderEntry(Document):
     page = IntField()
     volume = IntField()
     order = IntField()
+    reserved = BooleanField()
+    power = IntField()
+    toughness = IntField()
+    default = EmbeddedDocumentField(default)
     meta = {
             'collection': 'Binders',
             'indexes': [

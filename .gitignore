@@ -7,3 +7,6 @@ LandCollectionProject/card/__pycache__/*
 ./venv/*
 /.github/workflows/CICD.yaml
 LandCollectionProject/binder/temp/*
+/LandCollectionProject/node_modules
+/LandCollectionProject/static/*
+/LandCollectionProject/assets/CSS/colouredit.css

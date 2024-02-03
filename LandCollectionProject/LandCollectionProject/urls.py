@@ -23,5 +23,6 @@ urlpatterns = [
     path("card/", include("card.urls")),
     path("binder/", include("binder.urls")),
     path("search", include("search.urls")),
+    path("random", views.random, name="random"),
     path("", views.homepage, name="homepage")
 ]

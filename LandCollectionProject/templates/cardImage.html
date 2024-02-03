@@ -1,0 +1,18 @@
+
+{% if target.card_faces %}
+
+        <div class="card-image-front" >
+          <img class="card {{target.set}} border-{{target.border_color}} " title="{{context.name}}" alt="{{context.name}} " loading="eager" data-rotate="flip-backside" src="{{target.card_faces.0.image_uris.normal}}">
+        </div>
+          <div class="card-image-back">
+            <img class="card {{target.set}} border-{{target.border_color}}" title="{{context.name}}" alt="{{context.name}} " loading="eager" data-rotate="flip-backside" src="{{target.card_faces.1.image_uris.normal}}">
+          </div>
+      
+      {% else %}
+      
+        <div class="card-image-front">
+          <img class="card {{target.set}} border-{{target.border_color}}" title="{{context.name}}" alt="{{context.name}} " loading="eager" src="{{target.image_uris.normal}}">
+        </div>
+      {% endif%}
+  
+

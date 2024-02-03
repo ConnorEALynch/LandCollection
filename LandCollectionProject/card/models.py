@@ -2,7 +2,7 @@ from mongoengine import *
 
 
 class card(DynamicDocument):
-    id = StringField(db_field="_id")
+    _id = StringField()
     object = StringField()
     oracle_id = StringField()
     multiverse_ids = ListField(IntField())

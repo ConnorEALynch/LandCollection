@@ -7,7 +7,7 @@ exports = async function(changeEvent){
   const info = context.functions.execute("ParseColour", fullDocument);
   const db = context.services.get("CardCluster").db("CardDB");
   const binderCollection = db.collection("Binders");
-
+  const position =  await context.functions.execute("get_volume_page_row", fullDocument);
   let binderDoc = {
     "name": name,
     "oracle_id": oracle_id,
@@ -17,7 +17,10 @@ exports = async function(changeEvent){
     "default_image_uris": image_uris,
     "colours": info.colours,
     "copies": [],
-    "binder":info.binder
+    "binder":info.binder,
+    "row": position.row,
+    "page": position.page,
+    "volume": position.volume
   };
   if ("card_faces" in fullDocument)
   {

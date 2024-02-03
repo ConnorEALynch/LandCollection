@@ -1,0 +1,59 @@
+<div class="prints">
+  
+    <div class="prints-current">
+      <a class="prints-current-set" href="https://scryfall.com/sets/mh2">
+  
+        <span class="prints-current-set-name">
+          {{context.set_name}} ({{context.set|upper}})
+        </span>
+        <span class="prints-current-set-details">
+          #{{context.collector_number}} · {{context.rarity|title}} · {{ context.finishes|join:'/' |title }}<br>
+        </span>
+  </a>  </div>
+  
+  <!--
+    <div class="print-langs">
+          <a title="Scalding Tarn" data-component="card-tooltip" data-card-image-front="https://cards.scryfall.io/large/front/7/1/71e491c5-8c07-449b-b2f1-ffa052e6d311.jpg?1626099812" data-card-id="71e491c5-8c07-449b-b2f1-ffa052e6d311" href="https://scryfall.com/card/mh2/254/scalding-tarn" class="print-langs-item current">en</a>
+          <a title="Laguna ardiente" data-component="card-tooltip" data-card-image-front="https://cards.scryfall.io/large/front/c/0/c02ac085-4904-41ca-9d83-58d1469533ba.jpg?1646208269" data-card-id="c02ac085-4904-41ca-9d83-58d1469533ba" href="https://scryfall.com/card/mh2/254/es/laguna-ardiente" class="print-langs-item">es</a>
+          <a title="Lac de montagne bouillant" data-component="card-tooltip" data-card-image-front="https://cards.scryfall.io/large/front/f/5/f59ef9eb-a92b-4947-b377-a8312d50f83a.jpg?1646222273" data-card-id="f59ef9eb-a92b-4947-b377-a8312d50f83a" href="https://scryfall.com/card/mh2/254/fr/lac-de-montagne-bouillant" class="print-langs-item">fr</a>
+          <a title="Siedender Tümpel" data-component="card-tooltip" data-card-image-front="https://cards.scryfall.io/large/front/3/c/3cd4f882-c1de-4939-b4f1-4b1f3a13fc46.jpg?1646199316" data-card-id="3cd4f882-c1de-4939-b4f1-4b1f3a13fc46" href="https://scryfall.com/card/mh2/254/de/siedender-t%C3%BCmpel" class="print-langs-item">de</a>
+          <a title="Laghetto Bollente" data-component="card-tooltip" data-card-image-front="https://cards.scryfall.io/large/front/f/0/f0f0e43e-c14a-4585-84cd-3de27b09d75d.jpg?1646232449" data-card-id="f0f0e43e-c14a-4585-84cd-3de27b09d75d" href="https://scryfall.com/card/mh2/254/it/laghetto-bollente" class="print-langs-item">it</a>
+          <a title="Lago Alpino Fervente" data-component="card-tooltip" data-card-image-front="https://cards.scryfall.io/large/front/a/e/aea096c5-9588-4fee-9698-546056e47b62.jpg?1646263966" data-card-id="aea096c5-9588-4fee-9698-546056e47b62" href="https://scryfall.com/card/mh2/254/pt/lago-alpino-fervente" class="print-langs-item">pt</a>
+          <a title="沸騰する小湖" data-component="card-tooltip" data-card-image-front="https://cards.scryfall.io/large/front/7/6/76027735-1eef-4513-b884-a22c7cea3a65.jpg?1646241255" data-card-id="76027735-1eef-4513-b884-a22c7cea3a65" href="https://scryfall.com/card/mh2/254/ja/%E6%B2%B8%E9%A8%B0%E3%81%99%E3%82%8B%E5%B0%8F%E6%B9%96" class="print-langs-item">ja</a>
+          <a title="끓어오르는 작은 호수" data-component="card-tooltip" data-card-image-front="https://cards.scryfall.io/large/front/f/1/f14b0039-bdf2-46c5-9c2a-7c87f85bbd75.jpg?1646255758" data-card-id="f14b0039-bdf2-46c5-9c2a-7c87f85bbd75" href="https://scryfall.com/card/mh2/254/ko/%EB%81%93%EC%96%B4%EC%98%A4%EB%A5%B4%EB%8A%94-%EC%9E%91%EC%9D%80-%ED%98%B8%EC%88%98" class="print-langs-item">ko</a>
+          <a title="Обжигающее Горное Озеро" data-component="card-tooltip" data-card-image-front="https://cards.scryfall.io/large/front/f/c/fceac82d-b359-43d4-b34e-956718617524.jpg?1646269669" data-card-id="fceac82d-b359-43d4-b34e-956718617524" href="https://scryfall.com/card/mh2/254/ru/%D0%BE%D0%B1%D0%B6%D0%B8%D0%B3%D0%B0%D1%8E%D1%89%D0%B5%D0%B5-%D0%B3%D0%BE%D1%80%D0%BD%D0%BE%D0%B5-%D0%BE%D0%B7%D0%B5%D1%80%D0%BE" class="print-langs-item">ru</a>
+          <a title="沸腾山湖" data-component="card-tooltip" data-card-image-front="https://cards.scryfall.io/large/front/e/a/ea705573-133e-4573-a755-8692b7b285e6.jpg?1646275131" data-card-id="ea705573-133e-4573-a755-8692b7b285e6" href="https://scryfall.com/card/mh2/254/zhs/%E6%B2%B8%E8%85%BE%E5%B1%B1%E6%B9%96" class="print-langs-item">汉语</a>
+          <a title="沸騰山湖" data-component="card-tooltip" data-card-image-front="https://cards.scryfall.io/large/front/f/6/f644471b-69b6-4381-8ed2-fb3cbb5b8250.jpg?1646280370" data-card-id="f644471b-69b6-4381-8ed2-fb3cbb5b8250" href="https://scryfall.com/card/mh2/254/zht/%E6%B2%B8%E9%A8%B0%E5%B1%B1%E6%B9%96" class="print-langs-item">漢語</a>
+        <a title="Show versions in all languages" class="print-langs-item" href="https://scryfall.com/search?q=%21%E2%80%9CScalding+Tarn%E2%80%9D+set%3Amh2+lang%3Aany&amp;unique=prints">⋮</a>
+    </div>
+--->
+
+    {% if context.all_parts %}
+    <table class="prints-table">
+        <thead>
+          <tr><th><span>Faces, Tokens, &amp; Other Parts</span></th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for item  in context.all_parts%}
+  
+            <tr >
+              <td>
+                <a data-component="card-tooltip" data-card-image-front="{{item.uri}}" data-card-id="{{item.id}}" href="https://scryfall.com/card/{{item.id}}">
+{{item.name}}
+    </a>          </td>
+    </tr>
+    
+   {% endfor %}  
+</tbody>
+      </table>
+      {% endif %}
+  
+  
+  
+    <div class="prints-info-section">
+        <h2></h2>
+  
+        <div class="prints-info-section-note"></div>
+    </div>
+  

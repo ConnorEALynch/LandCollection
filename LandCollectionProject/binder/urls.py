@@ -23,6 +23,9 @@ urlpatterns = [
     path("<str:binder_name>/volume/<int:volume_number>/page/<int:page_number>/<int:row_number>", views.byRow, name="byRow"),
     # ex: /binder/Monocolour/volume/1/page/5/row/2
     path("<str:binder_name>/volume/<int:volume_number>/page/<int:page_number>/row/<int:row_number>", views.byRow, name="byRow"),
+    # ex: /binder/id
+    path("id/<str:card_id>", views.byid, name="byid"),
+    
     # ex: /binder/Monocolour/colours/U
     #path("<str:binder_name>/colours/<str:colour>", views.byColour, name="byColour"),
 

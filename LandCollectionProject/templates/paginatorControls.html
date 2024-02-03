@@ -1,0 +1,197 @@
+<div data-component="search-controls" class="search-controls">
+
+    <div class="search-controls-inner">
+
+        <div class="pagination-display">
+        
+                <span class="current">
+                    Page {{ context.number }} of {{ context.paginator.num_pages }}
+                </span>
+            
+        </div>
+
+    <div class="search-controls-pagination">
+
+    {% if context.number > 1 %}
+
+        {% if context.paginator.binder %}
+            <a href="{% url 'byPage' binder_name=context.paginator.binder volume_number=context.paginator.volume page_number=1%}" class="button-n icon-only">
+        {% else %}
+       
+            <a href="{% url 'searchIndex'%}?name={{request.GET.name}}&page=1" class="button-n icon-only">
+        {% endif%}
+
+    {% else %}
+        <span aria-hidden="true" class="button-n disabled icon-only">
+    {% endif %}
+        <svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg"><path d="M18 4.438l-1.375-1.438-12.625 12 12.563 12 1.437-1.406-11.094-10.594 11.094-10.562zm12 0l-1.375-1.438-12.625 12 12.563 12 1.437-1.406-11.094-10.594 11.094-10.562zM2 3h-1.66v24h1.66z"></path></svg> 
+        <b class="vh">First Page</b></span>   
+    {% if context.number > 1 %}
+        </a> 
+    {% else %}
+        </span>
+    {% endif %}
+  
+
+
+
+    {% if context.has_previous %}
+
+        {% if context.paginator.binder %}
+            <a href="{% url 'byPage' binder_name=context.paginator.binder volume_number=context.paginator.volume page_number=context.previous_page_number%}" class="button-n">
+        {% else %}
+            <a href="{% url 'searchIndex'%}?name={{request.GET.name}}&page={{context.previous_page_number}}" class="button-n">
+        {% endif%}
+
+    {% else %}
+    <span aria-hidden="true" class="button-n disabled">
+    {% endif %}
+    <svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg"><path d="M20.625 3l-12.625 12 12.563 12 1.437-1.406-11.094-10.594 11.094-10.562z"></path></svg> 
+    <b>Previous</b>    
+    {% if context.has_previous %}
+    </a> 
+    {% else %}
+    </span>
+    {% endif %}
+
+
+
+    {% if context.has_next %}
+    {% if context.paginator.binder %}
+            <a href="{% url 'byPage' binder_name=context.paginator.binder volume_number=context.paginator.volume page_number=context.next_page_number%}" class="button-n">
+        {% else %}
+            <a href="{% url 'searchIndex'%}?name={{request.GET.name}}&page={{context.next_page_number}}" class="button-n">
+    {% endif%}
+    {% else %}
+    <span aria-hidden="true" class="button-n disabled">
+    {% endif %}
+        <b>   Next     </b> 
+    <svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg"><path d="M9.375 3l12.625 12-12.562 12-1.438-1.406 11.094-10.594-11.094-10.562z"></path></svg>
+    {% if context.has_next %}
+    </a> 
+    {% else %}
+    </span>
+    {% endif %}
+
+
+
+    
+    {% if context.number < context.paginator.num_pages %}
+    {% if context.paginator.binder %}
+      
+    <a href="{% url 'byPage' binder_name=context.paginator.binder volume_number=context.paginator.volume page_number=context.paginator.num_pages%}" class="button-n icon-only">
+        {% else %}
+            <a href="{% url 'searchIndex'%}?name={{request.GET.name}}&page={{context.paginator.num_pages}}" class="button-n icon-only">
+    {% endif%}
+        {% else %}
+    <span aria-hidden="true" class="button-n disabled icon-only">
+    {% endif %}
+    <svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg"><path d="M12 4.438l1.375-1.438 12.625 12-12.563 12-1.437-1.406 11.094-10.594-11.094-10.562zm-12 0l1.375-1.438 12.625 12-12.563 12-1.437-1.406 11.094-10.594-11.094-10.562zM28 3h1.66v24h-1.66z"></path></svg> <b class="vh">Last Page</b></a>
+  
+    {% if context.number < context.paginator.num_pages %}
+    </a> 
+    {% else %}
+    </span>
+    {% endif %}
+</div>
+</div>
+</div>
+
+<div data-component="search-controls-mobile" class="search-controls-mobile">
+    <div class="search-controls-mobile-inner">
+
+
+    
+    {% if context.number > 1 %}
+
+        {% if context.paginator.binder %}
+            <a href="{% url 'byPage' binder_name=context.paginator.binder volume_number=context.paginator.volume page_number=1%}" class="button-n icon-only">
+        {% else %}
+       
+            <a href="{% url 'searchIndex'%}?name={{request.GET.name}}&page=1" class="button-n icon-only">
+        {% endif%}
+
+    {% else %}
+        <span aria-hidden="true" class="button-n disabled icon-only">
+    {% endif %}
+        <svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg"><path d="M18 4.438l-1.375-1.438-12.625 12 12.563 12 1.437-1.406-11.094-10.594 11.094-10.562zm12 0l-1.375-1.438-12.625 12 12.563 12 1.437-1.406-11.094-10.594 11.094-10.562zM2 3h-1.66v24h1.66z"></path></svg> 
+        <b class="vh">First Page</b></span>   
+    {% if context.number > 1 %}
+        </a> 
+    {% else %}
+        </span>
+    {% endif %}
+  
+
+
+
+    {% if context.has_previous %}
+
+        {% if context.paginator.binder %}
+            <a href="{% url 'byPage' binder_name=context.paginator.binder volume_number=context.paginator.volume page_number=context.previous_page_number%}" class="button-n">
+        {% else %}
+            <a href="{% url 'searchIndex'%}?name={{request.GET.name}}&page={{context.previous_page_number}}" class="button-n">
+        {% endif%}
+
+    {% else %}
+    <span aria-hidden="true" class="button-n disabled">
+    {% endif %}
+    <svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg"><path d="M20.625 3l-12.625 12 12.563 12 1.437-1.406-11.094-10.594 11.094-10.562z"></path></svg> 
+    <b>Previous</b>    
+    {% if context.has_previous %}
+    </a> 
+    {% else %}
+    </span>
+    {% endif %}
+
+
+
+        <p>
+          <strong>   Page {{ context.number }} of {{ context.paginator.num_pages }}</strong>
+        </p>
+ 
+
+
+    {% if context.has_next %}
+    {% if context.paginator.binder %}
+            <a href="{% url 'byPage' binder_name=context.paginator.binder volume_number=context.paginator.volume page_number=context.next_page_number%}" class="button-n">
+        {% else %}
+            <a href="{% url 'searchIndex'%}?name={{request.GET.name}}&page={{context.next_page_number}}" class="button-n">
+    {% endif%}
+    {% else %}
+    <span aria-hidden="true" class="button-n disabled">
+    {% endif %}
+        <b>   Next     </b> 
+    <svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg"><path d="M9.375 3l12.625 12-12.562 12-1.438-1.406 11.094-10.594-11.094-10.562z"></path></svg>
+    {% if context.has_next %}
+    </a> 
+    {% else %}
+    </span>
+    {% endif %}
+
+
+
+    
+    {% if context.number < context.paginator.num_pages %}
+    {% if context.paginator.binder %}
+      
+    <a href="{% url 'byPage' binder_name=context.paginator.binder volume_number=context.paginator.volume page_number=context.paginator.num_pages%}" class="button-n icon-only">
+        {% else %}
+            <a href="{% url 'searchIndex'%}?name={{request.GET.name}}&page={{context.paginator.num_pages}}" class="button-n icon-only">
+    {% endif%}
+        {% else %}
+    <span aria-hidden="true" class="button-n disabled icon-only">
+    {% endif %}
+    <svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg"><path d="M12 4.438l1.375-1.438 12.625 12-12.563 12-1.437-1.406 11.094-10.594-11.094-10.562zm-12 0l1.375-1.438 12.625 12-12.563 12-1.437-1.406 11.094-10.594-11.094-10.562zM28 3h1.66v24h-1.66z"></path></svg> <b class="vh">Last Page</b></a>
+  
+    {% if context.number < context.paginator.num_pages %}
+    </a> 
+    {% else %}
+    </span>
+    {% endif %}
+</div>
+
+
+</div>
+
+

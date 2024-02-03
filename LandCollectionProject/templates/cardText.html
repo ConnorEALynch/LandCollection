@@ -1,0 +1,27 @@
+{% load oracletag %}
+
+<h1 class="card-text-title" lang="{{context.lang}}">
+    <span class="card-text-card-name">
+       {{target.name}}
+    </span>
+
+    <span class="card-text-flavor-name">{{target.flavor_name}}</span>
+
+</h1>        
+<p class="card-text-type-line" lang="{{context.lang}}">
+   {{target.type_line}}
+</p>          <div class="card-text-box" lang="{{context.lang}}">
+        <div class="card-text-oracle">
+        {% with description=target.oracle_text|oracle_text %}
+        {{description|linebreaks}}
+        {% endwith %}
+
+        </div>
+        <div class="card-text-flavor">  </div>
+
+</div> 
+{% if target.power %}
+<div class="card-text-stats">
+    {{target.power}}/{{target.toughness}}
+</div>
+{% endif %}

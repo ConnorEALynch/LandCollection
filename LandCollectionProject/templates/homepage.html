@@ -1,11 +1,37 @@
 {% extends 'base.html' %}
 {% block content %}
-
-<h1>HomePage</h1>
-<form class="homepage-form" action="/search" accept-charset="UTF-8" method="get">
-    <input type="text" name="name" id="name">
-    <button type="submit">search</button>
-</form>
+    
+<div id="main" class="main" role="main">
 
 
+
+
+<div class="homepage">
+    <div class="inner-flex">
+  
+      <h1 class="homepage-title"><strong>Connor's Land Collection</strong></h1>
+  
+      <form class="homepage-form" action="/search" accept-charset="UTF-8" method="get">
+  
+        <a class="homepage-logo" rel="nofollow" title="Back to homepage" href="/">
+          <span class="vh">Connor's Land Collection</span>
+            <!--svg goes here-->
+  </a>
+        <input type="text" name="name" id="name" data-component="homepage-search" class="homepage-form-field" autocomplete="on" autocapitalize="none" autocorrect="off" spellcheck="false" maxlength="1024" tabindex="1">
+  
+        <button type="submit" class="visuallyhidden">
+          <span class="vh">Find cards</span>
+  </button>
+  </form>
+      <p class="homepage-links">
+        <a class="button-n inverted" href="/binder">Binders</a>
+        <a class="button-n inverted" href="/random">Random Card</a>
+      </p>
+    </div>
+  
+  
+  
+  </div>
+  
+</div>
 {% endblock content %}
