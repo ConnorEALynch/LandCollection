@@ -8,7 +8,7 @@ register = template.Library()
 unique_characters = {"T":"tap this permanent","W":"one white mana","U":"one blue mana","B":"one black mana","R":"one red mana","G":"one green mana","C":"one colorless mana","X":"X generic mana",
                      "U/R":"one blue or red mana","W/B":"one white or black mana","R/G":"one red or green mana","G/U":"one green or blue mana",
                      "B/R":"one black or red mana","W/U":"one white or blue mana","R/W":"one red or white mana","U/B":"one blue or black mana",
-                     "B/G":"one black or green mana","G/W":"one green or white mana", "S":"one snow mana","INFINITY":"infinite generic mana"}
+                     "B/G":"one black or green mana","G/W":"one green or white mana", "S":"one snow mana","E":"An energy counter","INFINITY":"infinite generic mana"}
 
 
 @register.filter
@@ -50,8 +50,10 @@ def parse_symbols(text):
                 card_symbol = char[:1] + char[2:]
 
 
-
-            text = text.replace( symbol,'<abbr class="card-symbol card-symbol-'+ card_symbol +'" title="'+ unique_characters[char]+'">'+symbol+'</abbr>')
+            try:
+               text = text.replace( symbol,'<abbr class="card-symbol card-symbol-'+ card_symbol +'" title="'+ unique_characters[char] +'">'+symbol+'</abbr>')
+            except:
+                print("symbol not found")
 
     return text
 
