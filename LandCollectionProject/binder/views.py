@@ -69,17 +69,6 @@ def byBinder(request, binder_name):
 
 #binder view
 def byVolume(request,binder_name, volume_number):
-    
-    # try:
-    #     binderSpecs = info.get(name=binder_name)
-    # except :
-    #     return HttpResponseNotFound(f"No binder with name:{binder_name} ")
-    # kwargs =  {"binder": binder_name, "volume": volume_number, "page":1}
-    # if binderSpecs.sort[0] == "name":
-    #     kwargs = {"binder": binder_name, "volume": volume_number}
-    # volume = binderEntry.objects(**kwargs).order_by('volume', 'page', 'row')
-    # paginator = CardPaginator(volume, binderSpecs,binder_name,volume_number)
-    #return render(request, "volume.html", {"context": paginator.get_page(1)})
     url = reverse("byPage", kwargs={"binder_name":binder_name, "volume_number":volume_number, "page_number":1 })
     return HttpResponseRedirect(url)
 
@@ -94,8 +83,10 @@ def byPage(request, binder_name, volume_number, page_number):
     result = HttpResponseServerError()
     if binderSpecs.sort[0] == "name":
         template = "item.html"
-        row = binderEntry.objects().get(binder=binder_name, volume=volume_number, page=page_number) #.order_by('volume', 'page', 'row')
-        result = render(request, "item.html", {"context":row})
+        row = binderEntry.objects(binder=binder_name, volume=volume_number).order_by('volume', 'page', 'row')
+        paginator = CardPaginator(row, binderSpecs, binder_name, volume_number)
+        binder_page = paginator.get_page(page_number)
+        result = render(request, "CUhotfix.html", {"context":binder_page})
         if format == "json":
             result =JsonResponse(binder_page)
 
