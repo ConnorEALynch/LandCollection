@@ -1,10 +1,10 @@
 {
-  "name": "landcollectionproject",
+  "name": "landcollection",
   "version": "1.0.0",
   "description": "initial build",
   "main": "./",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "prod": "webpack --mode production",
     "dev": "webpack --watch --mode development"
   },
   "author": "Connor Lynch",
@@ -19,6 +19,8 @@
   },
   "dependencies": {
     "@glidejs/glide": "^3.6.0",
-    "jquery": "^3.7.1"
+    "jquery": "^3.7.1",
+    "webpack": "^5.89.0",
+    "webpack-cli": "^5.1.4"
   }
 }

@@ -2,6 +2,7 @@ import Glide from '@glidejs/glide';
 
 
 
+
 window.addEventListener('load', () => {
     const carousels = document.querySelectorAll(".glide");
 
