@@ -16,10 +16,11 @@ ENV PYTHONUNBUFFERED 1
 COPY ./package.json ./package-lock.json /app/
 COPY ./webpack.config.js /app
 RUN apk add --update npm
-RUN npm install --omit=dev
-COPY . /app/
-RUN npm run prod
+RUN npm install
 
+
+RUN npm run prod
+COPY . /app/
 
 #python/django
 COPY requirements.txt /app
