@@ -20,8 +20,8 @@ services:
     image: landcollection-dev:latest
     env_file: ../.env
     build:
-      dockerfile: ../app/Dockerfile
-      context: ../app
+      dockerfile: ../Dockerfile
+      context: ..
       target: builder
     ports: 
       - '8000:8000'
