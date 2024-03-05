@@ -17,11 +17,11 @@ services:
 
   django:
     container_name: land-collection-dev
-    image: landcollection-dev:latest
+    image: landcollection:latest
     env_file: ../.env
     build:
-      dockerfile: ../Dockerfile
-      context: ..
+      dockerfile: ../app/Dockerfile
+      context: ../app
       target: builder
     ports: 
       - '8000:8000'
