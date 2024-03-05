@@ -16,7 +16,6 @@ jobs:
         
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
-        with:
       - name: Build
         uses: docker/build-push-action@v5.0.0
         with:
