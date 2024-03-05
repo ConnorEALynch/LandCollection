@@ -36,8 +36,8 @@
   font-family:"Lato";
   font-weight:300;
   font-style:normal;
-  src:url(https://scryfall.com/assets/lato/light-5dfca0efeead23f5dac00bf5f26bfb0ded1d53849898952d63fa46f4ad5488eb.woff2) format("woff2"),
-  url(https://scryfall.com/assets/lato/light-ba29cc0b1301bf061b3ecc77126d40426c6c0e5c30a8d42ab57d030910f816a1.woff) format("woff");
+  src:url(../fonts/light-lato.woff2) format("woff2"),
+  url(../fonts/light-lato.woff) format("woff");
   font-display:swap;
   font-synthesis:style
 }
@@ -45,8 +45,8 @@
   font-family:"Lato";
   font-weight:normal;
   font-style:normal;
-  src:url(https://scryfall.com/assets/lato/regular-780aad3648eaa7abd6fd2c4cccbb60d97a3252a7aae7093a826564b1136f4829.woff2) format("woff2"),
-  url(https://scryfall.com/assets/lato/regular-e241050f37c5178de55ab296275141962282b81a9ba52d50453cd8f7e8d7ff3d.woff) format("woff");
+  src:url(../fonts/regular-lato.woff2) format("woff2"),
+  url(../fonts/regular-lato.woff) format("woff");
   font-display:swap;
   font-synthesis:style
 }
@@ -54,8 +54,8 @@
   font-family:"Lato";
   font-weight:normal;
   font-style:italic;
-  src:url(https://scryfall.com/assets/lato/italic-dba8fec494ca97d88045e62e250c2ce8cb91b6afa10fa6b6195ddb39c362c20a.woff2) format("woff2"),
-  url(https://scryfall.com/assets/lato/italic-6c26e25321218d7f1234bc53514f0eb02d153ee9c052e6b5047fdae4e5d60614.woff) format("woff");
+  src:url(../fonts/italic-lato.woff2) format("woff2"),
+  url(../fonts/italic-lato.woff) format("woff");
   font-display:swap;
   font-synthesis:style
 }
@@ -63,8 +63,8 @@
   font-family:"Lato";
   font-weight:bold;
   font-style:normal;
-  src:url(https://scryfall.com/assets/lato/semibold-9c82b1583db546738b537cdf23ce5c92c3ae60d742cb1c9fbd7a4d05867b7eda.woff2) format("woff2"),
-  url(https://scryfall.com/assets/lato/semibold-1c8b28ceafd0a1374f1e6167ac01e2a90aebcc4a48bffa47d43553ece0d0cac5.woff) format("woff");
+  src:url(../fonts/semibold-lato.woff2) format("woff2"),
+  url(../fonts/semibold-lato.woff) format("woff");
   font-display:swap;
   font-synthesis:style
 }
@@ -72,24 +72,24 @@
   font-family:"MPlantin";
   font-weight:normal;
   font-style:italic;
-  src:url(https://scryfall.com/assets/mplantin/italic-ead9175e1ba69d292a9ae989150c2dcbc79c4453ef658043380133aaf42be8c0.woff2) format("woff2"),
-  url(https://scryfall.com/assets/mplantin/italic-08d219c9a58baecfbdf3e4670fa30ef3ead94e014672edd8af2db860568c5aff.woff) format("woff");
+  src:url(../fonts/italic-mplantin.woff2) format("woff2"),
+  url(../fonts/italic-mplantin.woff) format("woff");
   font-display:swap
 }
 @font-face {
   font-family:"FiraMono";
   font-weight:normal;
   font-style:normal;
-  src:url(https://scryfall.com/assets/fira-mono/regular-fbf18073d33ff14a2249c5357b08869c449c371d9ccba3a57320d9d2abf9d30c.woff2) format("woff2"),
-  url(https://scryfall.com/assets/fira-mono/regular-92a96dddc24b12e86e684fe42db0dee972f3497fce63db88fc24bfd2d30c012f.woff) format("woff");
+  src:url(../fonts/regular-fira-mono.woff2) format("woff2"),
+  url(../fonts/regular-fira-mono.woff) format("woff");
   font-display:swap
 }
 @font-face {
   font-family:"PhyrexianHorizontal";
   font-weight:normal;
   font-style:normal;
-  src:url(https://scryfall.com/assets/phyrexian-horizontal/regular-e5453d20dca42cbe0979feb00a66bd2c895feb29f04e1ffb8d4f0f2cf4986476.woff2) format("woff2"),
-  url(https://scryfall.com/assets/phyrexian-horizontal/regular-f60fa754c4ec6adb6be09b4ae7ea7f119ea950d7edc9c3d8eaa3b98f7013c9e9.woff) format("woff");
+  src:url(../fonts/regular-phyrexian-horizontal.woff2) format("woff2"),
+  url(../fonts/regular-phyrexian-horizontal.woff) format("woff");
   font-display:swap
 }
 *,
