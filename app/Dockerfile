@@ -3,7 +3,7 @@
 #https://github.com/docker/awesome-compose/tree/master/django
 
 FROM --platform=$BUILDPLATFORM python:3.12-alpine AS builder
-EXPOSE 8000
+EXPOSE 8000/tcp
 
 
 

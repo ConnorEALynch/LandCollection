@@ -37,7 +37,7 @@ DEBUG = env('DEBUG')
 
 ALLOWED_HOSTS = env.list('ALLOWED_HOSTS')
 
-
+print(DEBUG)
 # Application definition
 
 INSTALLED_APPS = [
@@ -135,8 +135,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
 STATICFILES_DIRS = [
-    BASE_DIR / "static",
-  
+    BASE_DIR / "static"  
 ]
 
 STATIC_URL = '/static/'

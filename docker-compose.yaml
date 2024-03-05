@@ -12,12 +12,12 @@ services:
     ports: 
       - '8000:8000'
     networks:
-    - nginx_network
+    - website
     volumes:
     - static_volume:/app/staticfiles
 
 networks:
-  nginx_network:
+  website:
     driver: bridge
 
 volumes:

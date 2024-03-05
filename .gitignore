@@ -1,9 +1,7 @@
-/config/config-lightsail.json
 .env
 /app/venv/*
 .vscode/*
 ./venv/*
-/.github/workflows/CICD.yaml
 /app/binder/temp/*
 /app/node_modules
 /app/static/*
