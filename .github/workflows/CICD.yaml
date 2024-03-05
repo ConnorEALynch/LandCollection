@@ -16,10 +16,12 @@ jobs:
         
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
+        with:
+          - context ./app
       - name: Build
         uses: docker/build-push-action@v5.0.0
         with:
-          context: .
+          context: ./app
           push: false
           tags: landcollection
           outputs: type=docker,dest=/tmp/landcollection.tar
@@ -78,5 +80,5 @@ jobs:
             --service-name ${{vars.LIGHTSAIL_CLUSTER}}  \
             --label ${{vars.CONTAINER_NAME}} \
             --image ${{vars.CONTAINER_NAME}}
-            
+
       - run: echo "This job's status is ${{ job.status }}."

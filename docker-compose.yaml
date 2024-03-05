@@ -7,7 +7,7 @@ services:
     env_file: .env
     build:
       dockerfile: ./Dockerfile
-      context: ./app
+      context: /app
       target: builder
     ports: 
       - '8000:8000'
