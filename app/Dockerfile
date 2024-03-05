@@ -18,9 +18,8 @@ COPY ./webpack.config.js /app
 RUN apk add --update npm
 RUN npm install
 
-
-RUN npm run prod
 COPY . /app/
+RUN npm run prod
 
 #python/django
 COPY requirements.txt /app
